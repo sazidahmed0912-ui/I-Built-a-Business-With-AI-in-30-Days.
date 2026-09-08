@@ -26,9 +26,9 @@ const SITE_CONFIG = {
 
   // --- Payment --------------------------------------------------------
   // Page buyers land on after clicking any "Buy Now" / "Get This Book"
-  // button. Default: pay.html — the UPI payment instructions page.
-  // All purchase buttons read this single value.
-  PAYMENT_URL: "pay.html",
+  // button. All purchase buttons read this single value.
+  // NOTE: Razorpay Payment Link. The buyer pays on Razorpay.
+  PAYMENT_URL: "https://rzp.io/rzp/XjtQEj0",
 
   // Screenshot form endpoint. The on-site upload form on /pay posts here,
   // and the service emails you the screenshot + buyer details.
