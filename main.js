@@ -64,6 +64,16 @@
       if (cfg[key]) el.textContent = cfg[key];
     });
 
+    // Form action + hidden field defaults, whole form stays config-driven.
+    document.querySelectorAll("[data-config-action]").forEach(function (el) {
+      var key = el.getAttribute("data-config-action");
+      if (cfg[key]) el.action = cfg[key];
+    });
+    document.querySelectorAll("[data-config-value]").forEach(function (el) {
+      var key = el.getAttribute("data-config-value");
+      if (cfg[key]) el.value = cfg[key];
+    });
+
     // Book cover image swap-in, only if a real image was configured.
     if (cfg.BOOK_COVER_IMAGE) {
       document.querySelectorAll(".cover").forEach(function (coverEl) {

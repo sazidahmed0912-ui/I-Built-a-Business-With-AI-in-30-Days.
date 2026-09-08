@@ -62,13 +62,52 @@
         <div class="step">
           <span class="step-num">3</span>
           <div>
-            <strong>Send the payment screenshot</strong>
-            <p>Tap the WhatsApp button below and attach the success screenshot.</p>
+            <strong>Upload the payment screenshot below</strong>
+            <p>Attach the success screenshot in the form and submit. No WhatsApp needed.</p>
           </div>
         </div>
       </div>
 
-      <a class="btn btn-primary btn-block" href="https://wa.me/9181933708?text=Hi%2C%20I%20paid%20%E2%82%B949%20for%20%22I%20Built%20a%20Business%20With%20AI%20in%2030%20Days%22.%20Sending%20the%20payment%20screenshot%20for%20confirmation." target="_blank" rel="noopener">Send Screenshot on WhatsApp <span class="arrow">→</span></a>
+      <section class="upload-box" id="uploadBox">
+        <h2>Send your payment screenshot</h2>
+
+        <form class="upload-form" method="POST" enctype="multipart/form-data" data-config-action="PAYMENT_FORM_URL">
+          <input type="hidden" name="_subject" value="New purchase: UPI screenshot — I Built a Business With AI in 30 Days">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_next" data-config-value="PAYMENT_FORM_NEXT_URL">
+
+          <div class="form-field">
+            <label class="file-label" for="upiScreenshot">
+              <input type="file" id="upiScreenshot" name="attachment" accept="image/*" required>
+              <span class="file-box">
+                <span class="file-box-title">Choose payment screenshot</span>
+                <span class="file-box-hint">Tap to select the success screenshot from your phone</span>
+                <span class="file-name" id="fileName">No file selected</span>
+              </span>
+            </label>
+          </div>
+
+          <div class="form-field">
+            <label class="form-label" for="upiRef">UPI Transaction ID <span class="opt">(optional)</span></label>
+            <input type="text" id="upiRef" name="UPI Transaction ID" placeholder="e.g. 442108124303" autocomplete="off">
+          </div>
+
+          <div class="form-field">
+            <label class="form-label" for="contactEmail">Email or WhatsApp number <span class="opt">(to receive the download link)</span></label>
+            <input type="email" id="contactEmail" name="email" placeholder="you@example.com" required>
+          </div>
+
+          <button class="btn btn-primary btn-block" type="submit">Submit Payment Screenshot <span class="arrow">→</span></button>
+        </form>
+
+        <p class="pay-note">Screenshot aanti hai seedha aapke email pe. Payment verify hote hi download link bheja jata hai.</p>
+      </section>
+
+      <div class="pay-alternate">
+        <span class="src-or">— or —</span>
+        <a class="btn btn-ghost btn-block" href="https://wa.me/9181933708?text=Hi%2C%20I%20paid%20%E2%82%B949%20for%20%22I%20Built%20a%20Business%20With%20AI%20in%2030%20Days%22.%20Sending%20the%20payment%20screenshot%20for%20confirmation." target="_blank" rel="noopener">Send screenshot on WhatsApp instead</a>
+      </div>
 
       <p class="pay-note">Book download link is sent after payment confirmation. For any issue, contact support at <a href="mailto:support@yourdomain.example.com">support@yourdomain.example.com</a>.</p>
 
@@ -94,6 +133,16 @@
 <script>
   window.SITE_CONFIG = SITE_CONFIG;
   document.getElementById("year").textContent = new Date().getFullYear();
+
+  var fileInput = document.getElementById("upiScreenshot");
+  if (fileInput) {
+    fileInput.addEventListener("change", function () {
+      var name = fileInput.files && fileInput.files.length
+        ? fileInput.files[0].name
+        : "No file selected";
+      document.getElementById("fileName").textContent = name;
+    });
+  }
 
   document.getElementById("copyUpId").addEventListener("click", function () {
     var upi = "9181933708@mbkns";

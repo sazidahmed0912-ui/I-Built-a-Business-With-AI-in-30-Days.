@@ -30,6 +30,19 @@ const SITE_CONFIG = {
   // All purchase buttons read this single value.
   PAYMENT_URL: "pay.html",
 
+  // Screenshot form endpoint. The on-site upload form on /pay posts here,
+  // and the service emails you the screenshot + buyer details.
+  // FormSubmit (free) is used by default — replace with your real email:
+  //   https://formsubmit.co/YOUR_EMAIL@EXAMPLE.COM
+  // First submission triggers an activation email from FormSubmit; click
+  // "activate" once and everything after that flows automatically.
+  // File limit on FormSubmit's free tier: ~2MB per file.
+  PAYMENT_FORM_URL: "https://formsubmit.co/support@yourdomain.example.com",
+
+  // Where buyers land after submitting the screenshot. Shows a
+  // "we received your payment details" confirmation.
+  PAYMENT_FORM_NEXT_URL: "thank-you.html",
+
   // --- Delivery -------------------------------------------------------
   // Replace with the real, direct download URL for the eBook file.
   // This is only ever surfaced on the /thank-you page, never on the
