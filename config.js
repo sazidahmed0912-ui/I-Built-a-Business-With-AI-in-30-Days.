@@ -25,10 +25,10 @@ const SITE_CONFIG = {
   AUTHOR_NAME: "Author Name",
 
   // --- Payment --------------------------------------------------------
-  // Replace with your payment gateway's checkout URL (Stripe Payment
-  // Link, Gumroad, Lemon Squeezy, Paddle, etc). Every "Get This Book"
-  // button on the sales page reads from this single value.
-  PAYMENT_URL: "YOUR_PAYMENT_GATEWAY_URL",
+  // Page buyers land on after clicking any "Buy Now" / "Get This Book"
+  // button. Default: pay.html — the UPI payment instructions page.
+  // All purchase buttons read this single value.
+  PAYMENT_URL: "pay.html",
 
   // --- Delivery -------------------------------------------------------
   // Replace with the real, direct download URL for the eBook file.

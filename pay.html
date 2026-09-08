@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pay ₹49 | I Built a Business With AI in 30 Days</title>
+<meta name="description" content="Complete your payment for I Built a Business With AI in 30 Days via UPI.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://yourdomain.example.com/pay">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="index.html">I Built a Business With AI in 30 Days<em>.</em></a>
+  </div>
+</header>
+
+<main id="main" class="pay-main">
+  <div class="container">
+    <div class="pay-card">
+
+      <span class="pill">Pay ₹49 · One-time</span>
+
+      <h1>Complete your payment</h1>
+      <p class="pay-lede">Pay ₹49 to the UPI ID below, then send the payment screenshot. Your eBook download link is delivered as soon as the payment is confirmed.</p>
+
+      <div class="pay-amount">
+        <span class="pay-amount-label">Amount to pay</span>
+        <span class="price price-lg">₹49</span>
+      </div>
+
+      <div class="upi-box">
+        <div class="upi-label">UPI ID</div>
+        <div class="upi-id">9181933708@mbkns</div>
+        <button class="copy-btn" id="copyUpId" type="button">Copy UPI ID</button>
+        <span class="copy-status" id="copyStatus" role="status"></span>
+      </div>
+
+      <div class="steps">
+        <div class="step">
+          <span class="step-num">1</span>
+          <div>
+            <strong>Open any UPI app</strong>
+            <p>Google Pay, PhonePe, Paytm, BHIM — any UPI app works.</p>
+          </div>
+        </div>
+        <div class="step">
+          <span class="step-num">2</span>
+          <div>
+            <strong>Pay ₹49 to the UPI ID above</strong>
+            <p>Carefully enter <strong>9181933708@mbkns</strong> and pay ₹49.</p>
+          </div>
+        </div>
+        <div class="step">
+          <span class="step-num">3</span>
+          <div>
+            <strong>Send the payment screenshot</strong>
+            <p>Tap the WhatsApp button below and attach the success screenshot.</p>
+          </div>
+        </div>
+      </div>
+
+      <a class="btn btn-primary btn-block" href="https://wa.me/9181933708?text=Hi%2C%20I%20paid%20%E2%82%B949%20for%20%22I%20Built%20a%20Business%20With%20AI%20in%2030%20Days%22.%20Sending%20the%20payment%20screenshot%20for%20confirmation." target="_blank" rel="noopener">Send Screenshot on WhatsApp <span class="arrow">→</span></a>
+
+      <p class="pay-note">Book download link is sent after payment confirmation. For any issue, contact support at <a href="mailto:support@yourdomain.example.com">support@yourdomain.example.com</a>.</p>
+
+      <div class="pay-back">
+        <a href="index.html">← Back to homepage</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>© <span id="year"></span> <span data-config-text="AUTHOR_NAME">Author Name</span></span>
+    <nav class="footer-links">
+      <a href="mailto:support@yourdomain.example.com" data-config="SUPPORT_EMAIL">Need help? Contact support</a>
+    </nav>
+  </div>
+</footer>
+
+<script>window.SITE_CONFIG = window.SITE_CONFIG || null;</script>
+<script src="config.js"></script>
+<script src="main.js"></script>
+<script>
+  window.SITE_CONFIG = SITE_CONFIG;
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  document.getElementById("copyUpId").addEventListener("click", function () {
+    var upi = "9181933708@mbkns";
+    var done = function () {
+      var status = document.getElementById("copyStatus");
+      status.textContent = "Copied!";
+      setTimeout(function () { status.textContent = ""; }, 1800);
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(upi).then(done, done);
+    } else {
+      var ta = document.createElement("textarea");
+      ta.value = upi;
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand("copy"); } catch (e) {}
+      document.body.removeChild(ta);
+      done();
+    }
+  });
+</script>
+</body>
+</html>
