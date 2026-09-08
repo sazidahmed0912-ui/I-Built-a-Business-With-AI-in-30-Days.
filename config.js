@@ -48,7 +48,7 @@ const SITE_CONFIG = {
   // This is only ever surfaced on the /thank-you page, never on the
   // sales page. See section 23–24 of the brief re: link security — a
   // static public URL can be shared, so treat this as a first version.
-  EBOOK_DOWNLOAD_URL: "YOUR_EBOOK_DOWNLOAD_URL",
+  EBOOK_DOWNLOAD_URL: "I Built a Business With AI in 30 Days.pdf",
 
   // --- Site -------------------------------------------------------------
   WEBSITE_URL: "https://yourdomain.example.com",
