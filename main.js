@@ -40,6 +40,7 @@
     wireScrollDepth();
     wireReveal();
     wireStickyCta();
+    wireAjaxForm();
   });
 
   /* -----------------------------------------------------------
@@ -94,6 +95,43 @@
         el.hidden = false;
       });
     }
+  }
+
+  /* -----------------------------------------------------------
+   * Screenshot form: submit via AJAX to the configured endpoint
+   * (e.g. FormSubmit), then redirect straight to our own
+   * thank-you page — we never show the form provider's default
+   * response page. The POST happens in the background so the
+   * buyer lands instantly on the download page.
+   * --------------------------------------------------------- */
+  function wireAjaxForm() {
+    var form = document.querySelector(".upload-form");
+    if (!form || !form.action) return;
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var btn = form.querySelector("button[type='submit']");
+      if (btn) {
+        btn.disabled = true;
+        btn.textContent = "Sending…";
+      }
+
+      var next = form.querySelector('[name="_next"]');
+      var nextUrl = (next && next.value) || (window.SITE_CONFIG && window.SITE_CONFIG.PAYMENT_FORM_NEXT_URL) || "thank-you.html";
+
+      var data = new FormData(form);
+      // Remove the _next control so the provider doesn't try to
+      // redirect (we handle navigation ourselves in the browser).
+      if (next) data.delete("_next");
+
+      fetch(form.action, { method: "POST", body: data })
+        .then(function () { window.location.href = nextUrl; })
+        .catch(function () {
+          // Even if the request fails silently, move the buyer on —
+          // a screenshot/backup knowledge is never the user's blocker.
+          window.location.href = nextUrl;
+        });
+    });
   }
 
   /* -----------------------------------------------------------
