@@ -44,7 +44,7 @@ const SITE_CONFIG = {
   // --- Pricing ----------------------------------------------------------
   // Leave PRICE as an empty string to hide price display entirely until
   // you've set a real number.
-  PRICE: "",
+  PRICE: "₹49",
   CURRENCY: "",
 
   // --- Cover art ----------------------------------------------------------

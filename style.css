@@ -183,6 +183,24 @@ summary:focus-visible {
 
 .cta-stack { display: flex; flex-direction: column; align-items: center; gap: 0; text-align: center; }
 
+.buy-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+.final-cta .buy-row { justify-content: flex-start; }
+
+@media (max-width: 860px) {
+  .final-cta .buy-row { justify-content: center; }
+}
+
+.price-inline {
+  font-weight: 700;
+  white-space: nowrap;
+}
+
 /* Price */
 .price {
   font-family: var(--font-display);
