@@ -1,0 +1,64 @@
+/**
+ * =========================================================
+ *  SITE CONFIGURATION
+ *  Edit the values below. Nothing else in the codebase
+ *  needs to change — every page reads from this file.
+ *
+ *  Single source of truth for the sales page and the
+ *  thank-you page. All copy is based on the eBook PDF:
+ *  "I Built a Business With AI in 30 Days" (2026 Edition).
+ * =========================================================
+ */
+const SITE_CONFIG = {
+  // --- Book details -----------------------------------------------------
+  BOOK_TITLE: "I Built a Business With AI in 30 Days",
+  BOOK_SUBTITLE:
+    "A practical, step-by-step playbook for first-time founders.",
+  BOOK_TAGLINE:
+    "Pick an idea. Build it with AI tools. Launch it. Get your first paying customer.",
+  BOOK_DESCRIPTOR: "2026 Edition · A Playbook for First-Time Founders",
+
+  // --- Author -------------------------------------------------------------
+  // Replace with the real author name. Do not add credentials, companies,
+  // or awards here unless they are true. No credential is presented unless
+  // you supply it here.
+  AUTHOR_NAME: "Author Name",
+
+  // --- Payment --------------------------------------------------------
+  // Replace with your payment gateway's checkout URL (Stripe Payment
+  // Link, Gumroad, Lemon Squeezy, Paddle, etc). Every "Get This Book"
+  // button on the sales page reads from this single value.
+  PAYMENT_URL: "YOUR_PAYMENT_GATEWAY_URL",
+
+  // --- Delivery -------------------------------------------------------
+  // Replace with the real, direct download URL for the eBook file.
+  // This is only ever surfaced on the /thank-you page, never on the
+  // sales page. See section 23–24 of the brief re: link security — a
+  // static public URL can be shared, so treat this as a first version.
+  EBOOK_DOWNLOAD_URL: "YOUR_EBOOK_DOWNLOAD_URL",
+
+  // --- Site -------------------------------------------------------------
+  WEBSITE_URL: "https://yourdomain.example.com",
+  SUPPORT_EMAIL: "support@yourdomain.example.com",
+
+  // --- Pricing ----------------------------------------------------------
+  // Leave PRICE as an empty string to hide price display entirely until
+  // you've set a real number.
+  PRICE: "",
+  CURRENCY: "",
+
+  // --- Cover art ----------------------------------------------------------
+  // If set to a real image path, the CSS-built cover mockup is replaced
+  // by this image wherever the cover appears (hero, final CTA, thank-you).
+  // Set to the deployed path of your eBook cover (e.g. "book-cover.png").
+  BOOK_COVER_IMAGE: "book-cover.png",
+
+  // --- Analytics --------------------------------------------------------
+  // Optional. Leave empty to disable. No analytics are fabricated or
+  // sent anywhere until a real ID is provided here.
+  ANALYTICS_ID: "",
+
+  // --- Policy placeholders (must be filled in before launch) -----------
+  REFUND_POLICY:
+    "[Add your refund policy here — e.g. window length, how to request one, and any conditions.]",
+};
